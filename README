@@ -1,0 +1,3 @@
+Welcome to my armpit (ARM pins and interrupts library)
+
+This library provides a limited support of the ST family of ARM Cortex M3/M4 chips. 

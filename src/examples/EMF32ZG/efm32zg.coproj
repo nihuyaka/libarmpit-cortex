@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 1.7.8" name="EFM32ZG_test">
+  <Target name="l0_test" isCurrent="1">
+    <Device manufacturerId="3" manufacturerName="Energy Micro" chipId="11" chipName="EFM32G200F16" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value="-std=c99"/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="EFM32G200F16"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="1"/>
+        <Option name="nostartfiles" value="1"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00004000" startValue="0x00000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00002000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
+        </MemoryAreas>
+        <LocateLinkFile path="../../../../../../coocox/coide/configuration/programdata/efm32zg_test/arm-gcc-link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="l0_test"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ColinkEx"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="EFM32G_16.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./"/>
+  <Files>
+    <File name="lib/core/systick.c" path="../../lib/EFM32ZG/lib/core/systick.c" type="1"/>
+    <File name="lib/emu.h" path="../../lib/EFM32ZG/lib/emu.h" type="1"/>
+    <File name="lib/msc.c" path="../../lib/EFM32ZG/lib/msc.c" type="1"/>
+    <File name="lib/core/nvic.c" path="../../lib/EFM32ZG/lib/core/nvic.c" type="1"/>
+    <File name="lib/timer1.h" path="../../lib/EFM32ZG/lib/timer1.h" type="1"/>
+    <File name="lib/core/system_control.h" path="../../lib/EFM32ZG/lib/core/system_control.h" type="1"/>
+    <File name="lib/dma.h" path="../../lib/EFM32ZG/lib/dma.h" type="1"/>
+    <File name="lib/core/system_control.c" path="../../lib/EFM32ZG/lib/core/system_control.c" type="1"/>
+    <File name="lib/core" path="" type="2"/>
+    <File name="lib/timer0.h" path="../../lib/EFM32ZG/lib/timer0.h" type="1"/>
+    <File name="lib/core/nvic.h" path="../../lib/EFM32ZG/lib/core/nvic.h" type="1"/>
+    <File name="lib/gpio.c" path="../../lib/EFM32ZG/lib/gpio.c" type="1"/>
+    <File name="lib/vcmp.h" path="../../lib/EFM32ZG/lib/vcmp.h" type="1"/>
+    <File name="lib/cmu.h" path="../../lib/EFM32ZG/lib/cmu.h" type="1"/>
+    <File name="lib/rmu.h" path="../../lib/EFM32ZG/lib/rmu.h" type="1"/>
+    <File name="lib/adc.h" path="../../lib/EFM32ZG/lib/adc.h" type="1"/>
+    <File name="lib/leuart0.h" path="../../lib/EFM32ZG/lib/leuart0.h" type="1"/>
+    <File name="lib/acmp.h" path="../../lib/EFM32ZG/lib/acmp.h" type="1"/>
+    <File name="lib/msc.h" path="../../lib/EFM32ZG/lib/msc.h" type="1"/>
+    <File name="lib/core/systick.h" path="../../lib/EFM32ZG/lib/core/systick.h" type="1"/>
+    <File name="lib/emu.c" path="../../lib/EFM32ZG/lib/emu.c" type="1"/>
+    <File name="lib/rtc.h" path="../../lib/EFM32ZG/lib/rtc.h" type="1"/>
+    <File name="lib/i2c.h" path="../../lib/EFM32ZG/lib/i2c.h" type="1"/>
+    <File name="lib/gpio.h" path="../../lib/EFM32ZG/lib/gpio.h" type="1"/>
+    <File name="lib/cmu.c" path="../../lib/EFM32ZG/lib/cmu.c" type="1"/>
+    <File name="lib/prs.h" path="../../lib/EFM32ZG/lib/prs.h" type="1"/>
+    <File name="lib/usart1.h" path="../../lib/EFM32ZG/lib/usart1.h" type="1"/>
+    <File name="lib" path="" type="2"/>
+  </Files>
+</Project>

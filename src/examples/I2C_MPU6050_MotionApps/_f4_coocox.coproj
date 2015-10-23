@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 2.0.3" name="_f4_coocox">
+  <Target name="debug_f4" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="344" chipName="STM32F407VG" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value="-fno-threadsafe-statics;  -fno-exceptions;  -fno-rtti;  -fabi-version=0; -fno-move-loop-invariants; -fdata-sections; -ffunction-sections; -fmessage-length=0; -flto; -std=gnu++11;  "/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Option name="DEBUG" value="2"/>
+        <Option name="WARNING" value="1"/>
+        <Option name="STANDARDCPP" value="100000"/>
+        <Option name="ADVANCES" value="0"/>
+        <Option name="CPPADVANCES" value="0,1,1,1,1,1"/>
+        <Includepaths>
+          <Includepath path="."/>
+          <Includepath path="../../../lib/stm32_common"/>
+          <Includepath path="../../../lib/util"/>
+          <Includepath path="../../../lib"/>
+          <Includepath path="../../../lib/stm32f4xx/lib"/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="USE_TIMER"/>
+          <Define name="STM32F407VG"/>
+          <Define name="STM32F407xx"/>
+          <Define name="USE_I2C"/>
+          <Define name="STM32F4"/>
+          <Define name="USE_SPI"/>
+          <Define name="USE_USART"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="1"/>
+        <Option name="nostartfiles" value="0"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Use nano C Library"/>
+        <Option name="UserEditLinker" value="--entry=main; -lm"/>
+        <Option name="Scanf" value="0"/>
+        <Option name="DiscardUnusedSections" value="1"/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00100000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00020000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="../../../../../../coocox/coide/configuration/programdata/_f4_coocox/arm-gcc-link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="test1"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F4xx_1024.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./"/>
+  <Files>
+    <File name="lib/nvic.c" path="../../lib/mcortex_core/armv7m/nvic.c" type="1"/>
+    <File name="src/main.cpp" path="main.cpp" type="1"/>
+    <File name="util/IRRemote.h" path="../../lib/util/IRRemote.h" type="1"/>
+    <File name="lib/rcc_ckgatenr.h" path="../../lib/stm32f4xx/lib/rcc_ckgatenr.h" type="1"/>
+    <File name="lib/irq_f407xx.h" path="../../lib/stm32f4xx/lib/irq_f407xx.h" type="1"/>
+    <File name="lib/rcc_cr.h" path="../../lib/stm32f4xx/lib/rcc_cr.h" type="1"/>
+    <File name="lib/irq.h" path="../../lib/stm32f4xx/lib/irq.h" type="1"/>
+    <File name="lib/irq_f417xx.h" path="../../lib/stm32f4xx/lib/irq_f417xx.h" type="1"/>
+    <File name="util/IRSend.cpp" path="../../lib/util/IRSend.cpp" type="1"/>
+    <File name="src" path="" type="2"/>
+    <File name="lib/spi_cpp.h" path="../../lib/stm32_common/spi_cpp.h" type="1"/>
+    <File name="lib/rcc.c" path="../../lib/stm32f4xx/lib/rcc.c" type="1"/>
+    <File name="lib/irq_f411xx.h" path="../../lib/stm32f4xx/lib/irq_f411xx.h" type="1"/>
+    <File name="util/button_handler.h" path="../../lib/util/button_handler/button_handler.h" type="1"/>
+    <File name="lib/rcc_ahb.h" path="../../lib/stm32f4xx/lib/rcc_ahb.h" type="1"/>
+    <File name="lib/rcc_cfgr.h" path="../../lib/stm32f4xx/lib/rcc_cfgr.h" type="1"/>
+    <File name="lib/rcc_pllcfgr.h" path="../../lib/stm32f4xx/lib/rcc_pllcfgr.h" type="1"/>
+    <File name="lib/usart.h" path="../../lib/stm32f4xx/lib/usart.h" type="1"/>
+    <File name="util/button_handler.cpp" path="../../lib/util/button_handler/button_handler.cpp" type="1"/>
+    <File name="lib/rcc.h" path="../../lib/stm32f4xx/lib/rcc.h" type="1"/>
+    <File name="lib/irq_f437xx.h" path="../../lib/stm32f4xx/lib/irq_f437xx.h" type="1"/>
+    <File name="lib/irq_f401xx.h" path="../../lib/stm32f4xx/lib/irq_f401xx.h" type="1"/>
+    <File name="lib/flash.h" path="../../lib/stm32f4xx/lib/flash.h" type="1"/>
+    <File name="lib/new.h" path="../../lib/stm32f4xx/lib/new.h" type="1"/>
+    <File name="lib/GPIO_Helper.cpp" path="../../lib/stm32f4xx/lib/GPIO_Helper.cpp" type="1"/>
+    <File name="lib/peripheral.cpp" path="../../lib/stm32_common/peripheral.cpp" type="1"/>
+    <File name="lib/system_control.c" path="../../lib/mcortex_core/armv7m/system_control.c" type="1"/>
+    <File name="lib/i2c.h" path="../../lib/stm32f4xx/lib/i2c.h" type="1"/>
+    <File name="lib/rcc_apb2.h" path="../../lib/stm32f4xx/lib/rcc_apb2.h" type="1"/>
+    <File name="lib/gpio.h" path="../../lib/stm32f4xx/lib/gpio.h" type="1"/>
+    <File name="lib/usart.cpp" path="../../lib/stm32f4xx/lib/usart.cpp" type="1"/>
+    <File name="startup_stm32f407xx.s" path="../../lib/stm32f4xx/startup/gcc_coocox/startup_stm32f407xx.s" type="1"/>
+    <File name="lib/nvic.h" path="../../lib/mcortex_core/armv7m/nvic.h" type="1"/>
+    <File name="lib/dma.cpp" path="../../lib/stm32f4xx/lib/dma.cpp" type="1"/>
+    <File name="lib/irq_f446xx.h" path="../../lib/stm32f4xx/lib/irq_f446xx.h" type="1"/>
+    <File name="lib" path="" type="2"/>
+    <File name="util/button.h" path="../../lib/util/button_handler/button.h" type="1"/>
+    <File name="lib/i2c.cpp" path="../../lib/stm32f4xx/lib/i2c.cpp" type="1"/>
+    <File name="lib/rcc_bdcr.h" path="../../lib/stm32f4xx/lib/rcc_bdcr.h" type="1"/>
+    <File name="lib/irq_f415xx.h" path="../../lib/stm32f4xx/lib/irq_f415xx.h" type="1"/>
+    <File name="lib/irq_f427xx.h" path="../../lib/stm32f4xx/lib/irq_f427xx.h" type="1"/>
+    <File name="lib/gpio_cpp.h" path="../../lib/stm32f4xx/lib/gpio_cpp.h" type="1"/>
+    <File name="util/IRSend.h" path="../../lib/util/IRSend.h" type="1"/>
+    <File name="util" path="" type="2"/>
+    <File name="lib/irq_f429xx.h" path="../../lib/stm32f4xx/lib/irq_f429xx.h" type="1"/>
+    <File name="lib/peripheral.h" path="../../lib/stm32_common/peripheral.h" type="1"/>
+    <File name="lib/RCC_Helper.c" path="../../lib/stm32f4xx/lib/RCC_Helper.c" type="1"/>
+    <File name="lib/systick.h" path="../../lib/mcortex_core/systick.h" type="1"/>
+    <File name="lib/common.h" path="../../lib/common.h" type="1"/>
+    <File name="lib/dma.h" path="../../lib/stm32f4xx/lib/dma.h" type="1"/>
+    <File name="lib/gpio.cpp" path="../../lib/stm32f4xx/lib/gpio.cpp" type="1"/>
+    <File name="lib/spi.cpp" path="../../lib/stm32_common/spi.cpp" type="1"/>
+    <File name="lib/system_control.h" path="../../lib/mcortex_core/armv7m/system_control.h" type="1"/>
+    <File name="lib/spi.h" path="../../lib/stm32_common/spi.h" type="1"/>
+    <File name="lib/rcc_apb1.h" path="../../lib/stm32f4xx/lib/rcc_apb1.h" type="1"/>
+    <File name="lib/irq_f405xx.h" path="../../lib/stm32f4xx/lib/irq_f405xx.h" type="1"/>
+    <File name="src/mpu6050.cpp" path="MPU6050.cpp" type="1"/>
+    <File name="lib/i2c_cpp.h" path="../../lib/stm32f4xx/lib/i2c_cpp.h" type="1"/>
+    <File name="lib/RCC_Helper.h" path="../../lib/stm32f4xx/lib/RCC_Helper.h" type="1"/>
+    <File name="lib/usart_cpp.h" path="../../lib/stm32f4xx/lib/usart_cpp.h" type="1"/>
+    <File name="util/button.cpp" path="../../lib/util/button_handler/button.cpp" type="1"/>
+    <File name="lib/__gnu_stubs.c" path="../../lib/__gnu_stubs.c" type="1"/>
+    <File name="lib/_components.h" path="../../lib/_components.h" type="1"/>
+    <File name="lib/timer.h" path="../../lib/stm32_common/timer.h" type="1"/>
+    <File name="util/IRremote.cpp" path="../../lib/util/IRremote.cpp" type="1"/>
+    <File name="lib/irq_f439xx.h" path="../../lib/stm32f4xx/lib/irq_f439xx.h" type="1"/>
+    <File name="lib/flash.c" path="../../lib/stm32f4xx/lib/flash.c" type="1"/>
+    <File name="lib/system_init.c" path="../../lib/stm32f4xx/lib/system_init.c" type="1"/>
+    <File name="lib/systick.c" path="../../lib/mcortex_core/systick.c" type="1"/>
+    <File name="lib/timer.cpp" path="../../lib/stm32_common/timer.cpp" type="1"/>
+    <File name="lib/dma_cpp.h" path="../../lib/stm32f4xx/lib/dma_cpp.h" type="1"/>
+    <File name="lib/GPIO_Helper.h" path="../../lib/stm32f4xx/lib/GPIO_Helper.h" type="1"/>
+    <File name="lib/rcc_csr.h" path="../../lib/stm32f4xx/lib/rcc_csr.h" type="1"/>
+    <File name="lib/timer_cpp.h" path="../../lib/stm32_common/timer_cpp.h" type="1"/>
+  </Files>
+</Project>

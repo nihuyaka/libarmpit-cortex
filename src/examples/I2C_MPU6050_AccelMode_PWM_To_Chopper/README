@@ -1,0 +1,3 @@
+MPU6050 in the raw accelerometer mode, no motion app,  small size to fit into 32K
++ chopper specific code (PWM + TV remote) 
+

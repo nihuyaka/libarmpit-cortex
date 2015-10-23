@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 2.0.3" name="MPU6050-test">
+  <Target name="debug" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="305" chipName="STM32F103C8" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="4"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value="-fno-threadsafe-statics;  -fno-exceptions;  -fno-rtti;  -fabi-version=0; -fno-move-loop-invariants; -fdata-sections; -ffunction-sections; -fmessage-length=0; -flto; -std=gnu++11;  "/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Option name="DEBUG" value="2"/>
+        <Option name="WARNING" value="1"/>
+        <Option name="STANDARDCPP" value="100000"/>
+        <Option name="ADVANCES" value="0"/>
+        <Option name="CPPADVANCES" value="0,1,1,1,1,1"/>
+        <Includepaths>
+          <Includepath path="."/>
+          <Includepath path="../../../lib"/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="USE_I2C"/>
+          <Define name="USE_TIMER"/>
+          <Define name="STM32F103C8"/>
+          <Define name="STM32F10X_MD"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="1"/>
+        <Option name="nostartfiles" value="0"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Use nano C Library"/>
+        <Option name="UserEditLinker" value="--entry=main; "/>
+        <Option name="Scanf" value="0"/>
+        <Option name="DiscardUnusedSections" value="1"/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00010000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00005000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
+        </MemoryAreas>
+        <LocateLinkFile path="../../../../../../../../coocox/coide/configuration/programdata/mpu6050-test/arm-gcc-link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="test1"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F10x_MD_64.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./"/>
+  <Files>
+    <File name="lib/rtc_cpp.h" path="../../../lib/rtc_cpp.h" type="1"/>
+    <File name="test.cpp" path="../MPU6050_MotionApps/test.cpp" type="1"/>
+    <File name="lib/adc.cpp" path="../../../lib/adc.cpp" type="1"/>
+    <File name="lib/core/system_control.h" path="../../../lib/core/system_control.h" type="1"/>
+    <File name="lib/adc_cpp.h" path="../../../lib/adc_cpp.h" type="1"/>
+    <File name="MPU6050.cpp" path="../MPU6050_MotionApps/MPU6050.cpp" type="1"/>
+    <File name="lib/spi_cpp.h" path="../../../lib/spi_cpp.h" type="1"/>
+    <File name="lib/rcc.c" path="../../../lib/rcc.c" type="1"/>
+    <File name="lib/startup_stm32f10x_md.s" path="../../../startup/gnu/startup_stm32f10x_md.s" type="1"/>
+    <File name="lib/test.cpp" path="../MPU6050_MotionApps/test.cpp" type="1"/>
+    <File name="lib/core/systick.cpp" path="../../../lib/core/systick.cpp" type="1"/>
+    <File name="lib/adc.h" path="../../../lib/adc.h" type="1"/>
+    <File name="lib/pwr.h" path="../../../lib/pwr.h" type="1"/>
+    <File name="lib/usart.h" path="../../../lib/usart.h" type="1"/>
+    <File name="lib/exti.h" path="../../../lib/exti.h" type="1"/>
+    <File name="lib/dac.h" path="../../../lib/dac.h" type="1"/>
+    <File name="lib/rcc.h" path="../../../lib/rcc.h" type="1"/>
+    <File name="lib/core/systick.h" path="../../../lib/core/systick.h" type="1"/>
+    <File name="lib/rcc_cpp.h" path="../../../lib/rcc_cpp.h" type="1"/>
+    <File name="lib/flash.h" path="../../../lib/flash.h" type="1"/>
+    <File name="lib/i2c.h" path="../../../lib/i2c.h" type="1"/>
+    <File name="lib/afio.cpp" path="../../../lib/afio.cpp" type="1"/>
+    <File name="lib/bkp.h" path="../../../lib/bkp.h" type="1"/>
+    <File name="lib/gpio.h" path="../../../lib/gpio.h" type="1"/>
+    <File name="lib/pwr.cpp" path="../../../lib/pwr.cpp" type="1"/>
+    <File name="lib/usart.cpp" path="../../../lib/usart.cpp" type="1"/>
+    <File name="lib/rtc.cpp" path="../../../lib/rtc.cpp" type="1"/>
+    <File name="lib/dma.cpp" path="../../../lib/dma.cpp" type="1"/>
+    <File name="lib" path="" type="2"/>
+    <File name="lib/rcc_class.cpp" path="../../../lib/rcc_class.cpp" type="1"/>
+    <File name="lib/core/system_control.cpp" path="../../../lib/core/system_control.cpp" type="1"/>
+    <File name="lib/i2c.cpp" path="../../../lib/i2c.cpp" type="1"/>
+    <File name="lib/gpio_cpp.h" path="../../../lib/gpio_cpp.h" type="1"/>
+    <File name="lib/peripheral.h" path="../../../lib/peripheral.h" type="1"/>
+    <File name="lib/common.h" path="../../../lib/common.h" type="1"/>
+    <File name="lib/dma.h" path="../../../lib/dma.h" type="1"/>
+    <File name="lib/core" path="" type="2"/>
+    <File name="lib/gpio.cpp" path="../../../lib/gpio.cpp" type="1"/>
+    <File name="lib/core/nvic.cpp" path="../../../lib/core/nvic.cpp" type="1"/>
+    <File name="lib/core/nvic.h" path="../../../lib/core/nvic.h" type="1"/>
+    <File name="lib/spi.cpp" path="../../../lib/spi.cpp" type="1"/>
+    <File name="lib/system_init.cpp" path="../../../lib/system_init.cpp" type="1"/>
+    <File name="lib/spi.h" path="../../../lib/spi.h" type="1"/>
+    <File name="lib/i2c_cpp.h" path="../../../lib/i2c_cpp.h" type="1"/>
+    <File name="lib/__gnu_stubs.c" path="../../../lib/__gnu_stubs.c" type="1"/>
+    <File name="lib/usart_cpp.h" path="../../../lib/usart_cpp.h" type="1"/>
+    <File name="lib/exti.cpp" path="../../../lib/exti.cpp" type="1"/>
+    <File name="lib/_components.h" path="../../../lib/_components.h" type="1"/>
+    <File name="lib/timer.h" path="../../../lib/timer.h" type="1"/>
+    <File name="lib/afio.h" path="../../../lib/afio.h" type="1"/>
+    <File name="lib/rtc.h" path="../../../lib/rtc.h" type="1"/>
+    <File name="lib/flash.c" path="../../../lib/flash.c" type="1"/>
+    <File name="lib/dac_cpp.h" path="../../../lib/dac_cpp.h" type="1"/>
+    <File name="lib/timer.cpp" path="../../../lib/timer.cpp" type="1"/>
+    <File name="lib/dma_cpp.h" path="../../../lib/dma_cpp.h" type="1"/>
+    <File name="lib/bkp.cpp" path="../../../lib/bkp.cpp" type="1"/>
+    <File name="lib/timer_cpp.h" path="../../../lib/timer_cpp.h" type="1"/>
+    <File name="lib/dac.cpp" path="../../../lib/dac.cpp" type="1"/>
+  </Files>
+</Project>

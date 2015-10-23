@@ -1,0 +1,54 @@
+gnu arm smallest code settings
+
+//mandatory options
+
+-fno-threadsafe-statics; //to get rid of:  undefined reference to `__cxa_guard_release'
+-fno-exceptions;         //to get rid of:  undefined reference to `operator delete(void*)'  `__cxa_end_cleanup' `__gxx_personality_v0'
+-fno-rtti                //to get rid of: undefined reference to `vtable for __cxxabiv1::__vmi_class_type_info'
+
+
+//optionally optional options, don't affect file size and don't fix any errors
+
+
+-fabi-version=0;          //? 
+-fno-move-loop-invariants; //? 
+-fdata-sections;         //? 
+-ffunction-sections;     //? 
+-fmessage-length=0;      //? 
+-flto;                   //? 
+-std=gnu++11;  
+-fno-use-cxa-atexit;      //this is to avoid Undefined reference to '__cxa_atexit' and probably not needed at all when building with gcc instead of g++
+
+link:  
+
+-mcpu=cortex-m4; 
+-mthumb; -g;     
+-nostartfiles;   //ui: don't use the standard  system startup files
+-O0; 
+--gc-sections;   //ui: discard unused sections
+--specs=nano.specs; 
+-lnosys;
+
+
+NOTE: no -lstdc++ !!! works  just need to implement some stubs (__cxa_pure_virtual() and operator new() if it is needed)
+also need to implement a dummy _init() if using -nostartfiles;
+
+
+NOTE: "Support C++" checkbox should be unchecked!  That will add the -lstdlib++ option that we want to avoid
+
+=============================
+copy and paste examples :  
+
+short: 
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -fno-threadsafe-statics -fno-exceptions -fno-rtti -c   <filenames>
+
+long:
+
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -fno-threadsafe-statics -fno-exceptions -fno-rtti \
+-fno-use-cxa-atexit; -fabi-version=0; -fno-move-loop-invariants; -fdata-sections;  -ffunction-sections; -fmessage-length=0; -flto; -std=gnu++11; -c   <filenames>
+
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Wl,-Map=test1.map -O0 -Wl,--gc-sections --specs=nano.specs \
+ -LC:\CooCox\CoIDE\configuration\ProgramData\MPU6050-MotionApps -Wl,-TC:\CooCox\CoIDE\configuration\ProgramData\MPU6050-MotionApps/arm-gcc-link.ld -g -o test1.elf .
+
+
+
