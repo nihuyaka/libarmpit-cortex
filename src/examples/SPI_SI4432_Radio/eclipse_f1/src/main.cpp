@@ -16,6 +16,18 @@ static void test()
 	radio.setFrequency(433);
 	radio.readAll();
 
+	//TX
+	uint8_t data[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+	while(1)
+	{
+		while (!radio.sendPacket(sizeof data, data))
+			;
+
+		RCC_Delay_ms(2000);
+	}
+
+
 }
 
 int main()

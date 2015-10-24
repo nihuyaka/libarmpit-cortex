@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-    <name>SI4432</name>
+    <name>SI4432_f4</name>
     <comment></comment>
     <projects>
     </projects>
@@ -33,7 +33,7 @@
         <link>
             <name>src/src</name>
             <type>2</type>
-            <locationURI>ARMPIT_ROOT/examples/SPI_SI4432_Radio/src</locationURI>
+            <location>C:/tmp/github/libarmpit-cortex/src/examples/SPI_SI4432_Radio/src</location>
         </link>
     </linkedResources>
     <filteredResources>
